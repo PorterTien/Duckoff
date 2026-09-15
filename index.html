@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#B3E5FC">
+    <title>White Goose</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Minimal control panel (toggle with 'C' key) -->
+    <div class="controls" id="controls" style="display: none;">
+        <div class="control-panel">
+            <div class="control-header">
+                <span>Goose Controls</span>
+                <button class="close-btn" onclick="document.getElementById('controls').style.display='none'">×</button>
+            </div>
+            <div class="control-buttons">
+                <button onclick="goose.flex()">Flex</button>
+                <button onclick="goose.judge()">Judge</button>
+                <button onclick="goose.beat()">Beat</button>
+                <button onclick="goose.idle()">Idle</button>
+            </div>
+            <div class="control-info">
+                <div>State: <span id="state-display">idle</span></div>
+                <div>Personality: <span id="personality-display">neutral</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div id="goose-3d-container" class="goose-3d-container">
+            <!-- Three.js canvas will be inserted here -->
+        </div>
+        <div class="swipe-hint" id="swipe-hint">Swipe to rotate</div>
+    </div>
+    
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="goose.js"></script>
+</body>
+</html>
